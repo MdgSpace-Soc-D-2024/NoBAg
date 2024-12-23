@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Members</title>
+    <link rel="stylesheet" href="/styles project.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <script>
+        setInterval(() => {
+           $.get(window.location.pathname + "/data/", (data, o) => {
+            document.getElementById("projectName").innerText = "Project Title: "+ data.projectname
+           })
+        }, 200);
+
+        $.get(window.location.pathname + "/data/members/", (data, text) => {
+            console.log(data)
+            var i;
+            let a = [];
+            for(i in JSON.parse(data.members)) {
+                a.push(`<tr><img src="${JSON.parse()}">Photo</td><td>${JSON.parse(data.members)[i]}</td><td>EMAIL</td><td><button class="add-button">+</button></td></tr>`)
+            }
+            document.getElementById("members").innerHTML = a.join('');
+        })  
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="projectName"></h1>
+        </h1>
+        <h2>Manage Members</h2>
+        <div class="tabs">
+            <button class="tab active">Members</button>
+            <button class="tab">Add Members</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Enter username or email...">
+            <button class="search-button">🔍</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Add</th>
+                </tr>
+            </thead>
+            <tbody id="members">
+                <!-- <tr>
+                    <td>Photo</td>
+                    <td>Vishwajeet Raj</td>
+                    <td>vishwajeetraj11</td>
+                    <td><button class="add-button">+</button></td>
+                </tr>
+                <tr>
+                    <td>Photo</td>
+                    <td>Blue Ameri</td>
+                    <td>vishwajeet</td>
+                    <td><button class="add-button">+</button></td>
+                </tr>
+                <tr>
+                    <td>Photo</td>
+                    <td>Shayam Bharti</td>
+                    <td>sayam</td>
+                    <td><button class="add-button">+</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

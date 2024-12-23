@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/styles dashboard.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Board</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $.get("/uprojects", (data, text) => {
+            document.getElementById("showPlaylist").innerHTML = data
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">Product Board</div>
+            <button class="logout-button" onclick="window.location.href ='/logout'">Log Out</button>
+        </header>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <button class="create-project-button">+ Create A Project</button>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active">My Projects</button>
+                <button class="tab">Shared Projects</button>
+            </div>
+            <table id="preview" class="table table-dark table-bordered">
+                <thead style="text-align: center;">
+                    <th>Serial No.</th>
+                    <th>Project Name</th>
+                    <th>Role</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </thead>
+                <thead id="showPlaylist"></thead>
+            </table>
+            <!-- <div class="project-card">
+        <h2 class="project-title">Product Board</h2>
+        <p class="project-description">
+          A project management application that allows you to track tasks process while working in a team. 
+          You can choose the priority of the projects, give them suitable labels, and put them under various stages in boards (View).
+        </p>
+        <div class="project-actions">
+          <button class="action-button open-button">OPEN</button>
+          <button class="action-button edit-button">EDIT</button>
+          <button class="action-button delete-button">DELETE</button>
+        </div>
+      </div> -->
+
+        </main>
+    </div>
+</body>
+
+</html>
