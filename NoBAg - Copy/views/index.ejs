@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+    <strong>Introducing NoBAg 🚀</strong>
+    <p>
+        Welcome to NoBAg – a cutting-edge project management tool designed to simplify collaboration and supercharge
+        productivity. Whether you're leading a team or working solo, NoBAg equips you with everything you need to
+        seamlessly create, edit, and manage projects like a pro.</p>
+
+    <strong>Why Choose NoBAg?</strong>
+    <p>
+        - Smart Project Management: Organize tasks, set priorities, and track progress effortlessly.
+        - Collaborative Chat Room: Stay connected with your team in real-time, brainstorm ideas, and resolve issues
+        faster
+        than ever.
+        - Real-Time Notifications: Never miss an update! Get instant alerts on project changes, messages, and deadlines.
+        Simplify. Collaborate. Succeed.
+        With NoBAg, managing your projects has never been easier or more engaging. It's time to leave behind the chaos
+        and embrace streamlined teamwork.
+    </p>
+
+    <p>NoBAg – Where ideas turn into action. Try it today and redefine the way you manage projects! 🌟 </p>
+
+    <% if (locals.isAuthenticated) { %>
+        <p class="text-4xl underline">You are logged in.</p>
+        <% } else { %>
+            <p>You are not logged in. <a href="/login" class="underline">Login</a>.</p>
+            <% } %>
+
+                <%- include('partials/footer') -%>
