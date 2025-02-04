@@ -106,8 +106,6 @@ irrespective of our choice. Hence NoBAg means now you don’t have to carry anyt
 
 ---
 
----
-
 ## *License*
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
